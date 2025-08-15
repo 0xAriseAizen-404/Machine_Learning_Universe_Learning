@@ -430,3 +430,109 @@ source ~/.bashrc
 ```
 
 ---
+
+---
+
+---
+
+Yeah, that long `/home/mrx/Documents/.../env` prefix is Conda being overly explicit because you created the environment with `--prefix ./env`.
+
+By default, Conda displays the **full absolute path** for "prefix-based" envs, instead of the short name it uses for "named" envs.
+
+---
+
+## 3 ways to make it short like `(env)`
+
+### **Option 1: Use `venv` instead of Conda for per-project envs**
+
+```bash
+python -m venv env
+source env/bin/activate
+```
+
+Activation will give you `(env)` by default — nice and short.
+
+---
+
+### **Option 2: Give Conda env a name instead of prefix**
+
+```bash
+conda create -n envname python=3.10
+conda activate envname
+```
+
+That way Conda just shows `(envname)`.
+
+Downside: This puts the env in Conda’s global env directory, not inside the project folder (you’d have to remember to delete it if you remove the project).
+
+---
+
+### **Option 3: Keep prefix env but shorten the prompt**
+
+You can tell Conda to only show the last part of the path:
+
+```bash
+conda config --set env_prompt '({name})'
+```
+
+Now even if your env is `/long/path/to/project/env`, it will just show `(env)` when activated.
+
+---
+
+If you want **per-project environments + short names**, the cleanest combo is:
+
+- Create with `--prefix ./env` (keeps env inside project)
+- Set `env_prompt` to `({name})` so prompt is short.
+
+---
+
+---
+
+---
+
+```python
+cd ~/Documents/Code/ProjectName
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windowsz
+```
+
+```python
+pip install flask
+pip list
+pip freeze > requirements.txt
+pip install -r requirements.txt
+```
+
+```python
+cd ~/Documents/Code/ProjectName
+conda create -n env python=3.10 -> global
+conda create --prefix ./env python=3.10 -> local
+conda activate ./env -> activate
+```
+
+```python
+conda deactivate -> deactivate
+```
+
+```python
+conda config --set env_prompt '({name})' -> if prefix is long then use this
+```
+
+```python
+conda install flask -> install packages not recommeneded as it install those Lib Packages -> use PIP
+conda list
+
+conda env export > environment.yml -> export all types of packages like Lib, Conda, Pip
+conda env export --from-history > environment.yml -> only export installed packages through conda
+
+conda env create -f environment.yml -> similar like pip install -r requirements.txt - do inside activated env
+conda env update -f environment.yml --prune
+conda env create --prefix ./env -f environment.yml
+```
+
+---
+
+---
+
+---
