@@ -506,8 +506,8 @@ pip install -r requirements.txt
 
 ```python
 cd ~/Documents/Code/ProjectName
-conda create -n env python=3.10 -> global
 conda create --prefix ./env python=3.10 -> local
+conda create -n env python=3.10 -> global
 conda activate ./env -> activate
 ```
 
@@ -526,9 +526,9 @@ conda list
 conda env export > environment.yml -> export all types of packages like Lib, Conda, Pip
 conda env export --from-history > environment.yml -> only export installed packages through conda
 
-conda env create -f environment.yml -> similar like pip install -r requirements.txt - do inside activated env
+conda env create --prefix ./env -f environment.yml -> Local
+conda env create -f environment.yml -> Global -> similar like pip install -r requirements.txt - do inside activated env
 conda env update -f environment.yml --prune
-conda env create --prefix ./env -f environment.yml
 ```
 
 ---
