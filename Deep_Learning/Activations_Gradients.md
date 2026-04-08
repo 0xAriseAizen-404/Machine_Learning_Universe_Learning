@@ -1,4 +1,75 @@
 ```
+Okey here's the thing
+I have been studying about resent why he used this approach whats the problem and eveyrhting we will go there slowly okey
+
+When I am reading about the thing that i mentioned about,
+i found out the problem lies in the Degradation
+here he used some skip conenction like taht we will go over later okey
+so there
+he used one layers relu output to feed into another layer output then doin relu on them right
+thats what it did
+so i have like
+why whats with relu output and all this
+why relu output to another output before relu
+
+then i come across with vanishing gradients, exploding gradients somehow
+i find myself reading the articles above concepts
+i will explain what i learned the correct me okey
+then we will learn about the resent and all that stuff okey.
+
+see here
+if we are building a network, then we will palce some hidden layers right, what are these these are just linear layers some xw+c, if we stack all of them over then its going to be a big linear layer XW+C
+its nothing but a Linear regression model type right
+but in the real life data is complicated, its in non linear form
+so we need to inlcude non linearity in the data
+
+so we include non lienar activations like sigmoid tanh relu leaky relu exponentLu right
+these things squash the outputs of the linear models in the certain range and make them  non linear right
+see the outputs of the layer 1 might be like -x to +x
+but the non linear function like tanh it sqaushes these numbers within -1 to +1
+large positive numbers take the region of +1 and large negative numbers take -1 region right
+some S kind of shape -1 to +1 right
+sigmoid also does this but in 0 to 1 range
+okey fine comes to this
+these squashed outputs feeds as inputs to the next layer here we can thought like already the inputs are in -1 to 1 right so the next operations would also be in this range so we dont need any squashes but the reality is maybe because of that X@W of all that summation or maybe the values of W in 2nd layer
+the outputs of the 2nd layer might go to the extreme like the 1st layer output, thats we should put non linearity to squash them in the 2nd layer also
+like that so on so on
+at the last layer we can use Sigmoid fucntion as it gives the ranges 0 to 1, this is perfect for probability range right so if it is a categorical probelm then it would be best option.
+(here just a doubt if we have the sigmoid values then how can we calcualte loss, like that cross entropy is there right it is Sigmoid + logloss right), so if we get the sigmoid probabilties then how can we do cross entropy here ? i mean calcualte loss here ?
+
+okey okey right back to our thing
+thats how the tanh and sigmoid fucntion is used
+but the problem is that
+as the in backpropagation
+we have to do chain rule right output to input layer grads calculation
+but as we go back it is multiplication right
+so the gradients will eventually decrase to 0 this is vansihing gradient
+and if the gradients will become large and large then this is exploding gradient
+if we use sigmoid fucntion throughout the network then we definitely get the vanishing gradient
+because in 1st layer because of large extreme values, the sigmoid fucntoons give many values in 1 region and 0 region and some values in the middle
+then as the layers are progressing, the saturation decreses, meaning values won;t take extreme values here in activation fucntion, they will decrese and centered to 0.5 and satuarated right so the values of grads are like 0.9 * 0.6 * 0.3 * 0.03 * 0.01 -> here because at the first layer the values taken exterme 0's and 1's region so thats why the grad for that becomes 0.01 like that we multiply all of them rigth so we get tooo closeee toooo 0. thats why vanishing gradient, same with TanH right instead of 0 and 1, it takes -1 and 1. saturation also decrease as the layers increase, values wont take extreme regions except in early layers.
+exploding gradient is not specific to the activation fucntion, it can happen in any activation maybe because of initialization of weights or the depth of the network or the optimizting function like that
+
+now coming to relu
+relu solves the vansihing gradient locally
+because if the input value is > 0 then it's output is the input itself and if the input is <  0 then output is 0
+gradient of this is like x > 0 then 1 & x < 0 then it is 0
+here there is place for vanishing gradient.
+because a neuron that got deactivated because of negative number and got zero there, can be changed in next layer beacuse the neuron in next layer is the summation of weights and outputs of the previous layer right
+so its temporarily deactivated neuron
+even if 35% of neurons are zero, with the 65% of neurons activated, it can learn.
+but the problem is Dying Relu, here if the neuron is always negative then it wont activate, it will always get zero there and is deactivated. so its no longer useful for training.
+
+now to accompany this problem
+we introduced batch normalization
+conv + bn + relu
+here the values of conv layer, will be channel wise go under batch normalization process, mean = 0, varaince slight unit (1). like that the values of the input channel wise changes.
+because of this, the values will be eqully distributed in negative and positive.
+is this right ?
+
+```
+
+```
 so okeyyyyy finally,
 lets get this over with, not too complicated or not too much overthink not too think
 okey
