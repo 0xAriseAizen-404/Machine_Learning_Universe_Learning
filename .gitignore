@@ -2,9 +2,28 @@ MLProjects
 MLProjects/*
 Complex_MLProjects_Deploy
 Complex_MLProjects_Deploy/*
+Complex_DLProjects_Deploy
+Complex_DLProjects_Deploy/*
 Complete-Data-Science-With-Machine-Learning-And-NLP-2024-main
 Complete-Data-Science-With-Machine-Learning-And-NLP-2024-main/*
 Pytorch_Deep_Learning
 Pytorch_Deep_Learning/*
 Neural_Networks_Zero_To_Hero
 Neural_Networks_Zero_To_Hero/*
+
+
+# MLProjects -> Here small projects like 2Hrs, 3Hrs goes into
+# Complex MLProjects -> Here the full ML deployment type of Projects goes into
+# Pytorch Deep Learning -> Here, David Brouche ZTM Course Notebooks
+# Neural Networks Zero to Hero -> Here Andrej Playlist Notebooks goes into
+# DLProjects -> Here also small projects goes into, 2Hrs Object Detection like that
+# Complex DLProjects -> Big Projects goes into this
+
+# See Only the Projects goes into Seperate Repository
+# and then whatever we learn like maybe Krish Naik Deep Learning Course goes into this.
+
+# I don't care, whatever we learn goes into the main MachineLearningUniverse repository
+# but when we do projects,
+# Small Projects goes into MLProjects, DLProjects -> Contains Lots of Small Projects
+# Complex_ML_Projects -> Contains full deployed projects, these are separately takes an Individual Repository
+# Machine Learning Universe -> Rest of all the things goes into
