@@ -1,5 +1,7 @@
 MLProjects
 MLProjects/*
+DLProjects
+DLProjects/*
 Complex_MLProjects_Deploy
 Complex_MLProjects_Deploy/*
 Complex_DLProjects_Deploy
@@ -12,12 +14,13 @@ Neural_Networks_Zero_To_Hero
 Neural_Networks_Zero_To_Hero/*
 
 
-# MLProjects -> Here small projects like 2Hrs, 3Hrs goes into
+# MLProjects -> Here small projects like 2Hrs, 3Hrs goes into & Individual Siddharthan Projects
 # Complex MLProjects -> Here the full ML deployment type of Projects goes into
+# DLProjects -> Here small projects like 2Hrs, 3Hrs & Siddharthan DL Projects Individually goes into
+# Complex DLProjects -> Here the full deployment type of Big Projects goes into this
 # Pytorch Deep Learning -> Here, David Brouche ZTM Course Notebooks
 # Neural Networks Zero to Hero -> Here Andrej Playlist Notebooks goes into
 # DLProjects -> Here also small projects goes into, 2Hrs Object Detection like that
-# Complex DLProjects -> Big Projects goes into this
 
 # See Only the Projects goes into Seperate Repository
 # and then whatever we learn like maybe Krish Naik Deep Learning Course goes into this.
